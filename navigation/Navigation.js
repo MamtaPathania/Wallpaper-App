@@ -1,6 +1,4 @@
 
-
-
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -18,6 +16,8 @@ import ImageCarousel from "../components/SearchTab/ImageCarousel";
 import HomeImageCarousel from "../components/Wallpapers/HomeImageCarousel";
 import FavoritesScreen from "../components/MoreScreen/FavoritesScreen";
 import DownloadsScreen from "../components/MoreScreen/DownloadsScreen";
+import ImageViewer from "../components/MoreScreen/ImageViewer";
+import SharedScreen from "../components/MoreScreen/SharedScreen";
 
 
 const Tab = createBottomTabNavigator();
@@ -48,7 +48,6 @@ const SearchStackScreen = () => (
   <SearchStack.Navigator>
     <SearchStack.Screen name="SearchHome" component={SearchTab} options={{ headerShown: false }} />
     <SearchStack.Screen name="SearchImages" component={SearchImage} options={{ headerShown: false }} />
-    
   </SearchStack.Navigator>
 );
 
@@ -56,17 +55,20 @@ const MoreStackScreen = () => (
   <MoreStack.Navigator>
     <MoreStack.Screen name="Profile" component={MoreScreen} options={{
           headerStyle: {
-            backgroundColor: 'black', 
+            backgroundColor: 'black',     
+            
           },
           headerTintColor: '#fff', 
           headerTitleStyle: {
             fontWeight: 'bold', 
             fontSize:24,
+            
           },
         }} />
-    <MoreStack.Screen name="Favorites" component={FavoritesScreen} options={{
-          headerStyle: {
-            backgroundColor: 'black', 
+    <MoreStack.Screen name="SharedImages" component={SharedScreen} options={{
+          headerStyle: {backgroundColor: 'black', 
+            
+            // backgroundColor: 'black', 
           },
           headerTintColor: '#fff', 
           headerTitleStyle: {
@@ -76,7 +78,7 @@ const MoreStackScreen = () => (
         }}/>
     <MoreStack.Screen name="Downloads" component={DownloadsScreen} options={{
           headerStyle: {
-            backgroundColor: 'black', 
+            backgroundColor:'black', 
           },
           headerTintColor: '#fff', 
           headerTitleStyle: {
@@ -84,6 +86,8 @@ const MoreStackScreen = () => (
             fontSize:24,
           },
         }}/>
+
+<MoreStack.Screen name="DownloadedImageSwipper" component={ImageViewer} options={{headerShown:false}}/>
   </MoreStack.Navigator>
 );
 
@@ -96,8 +100,10 @@ const Navigation = () => {
       screenOptions={({ route }) => ({
         tabBarStyle: {
           backgroundColor: '#000',
+          
         },
-        tabBarActiveTintColor: '#fff',
+        // tabBarActiveTintColor: '#fff',
+        tabBarActiveTintColor: '#d67a49',
         tabBarInactiveTintColor: '#aaa',
         headerShown: false,
         tabBarLabelStyle: {

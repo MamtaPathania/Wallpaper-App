@@ -1,27 +1,34 @@
 {
   "expo": {
-    "name": "pic-downloader",
-    "slug": "pic-downloader",
+    "name": "wallpaper-app",
+    "slug": "wallpaper-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image.png",
     "userInterfaceStyle": "light",
-    // "splash": {
-    //   "image": "./assets/splash.png",
-    //   "resizeMode": "contain",
-    //   "backgroundColor": "#ffffff"
-    // },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pathania.wallpaperapp"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/image.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.pathania.wallpaperapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bf2365ac-2970-4672-a398-5240ef5e7aa3"
+      }
     }
   }
 }
